@@ -1,0 +1,22 @@
+{
+  "name": "dev-mixins",
+  "homepage": "https://github.com/ostinred/dev-mixins",
+  "authors": [
+    "ostinred <ostinred@gmail.com>"
+  ],
+  "description": "scss mixins for fast css-coding",
+  "main": "mixins.scss",
+  "keywords": [
+    "scss",
+    "mixins",
+    "sass"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
