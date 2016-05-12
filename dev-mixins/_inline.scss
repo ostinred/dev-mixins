@@ -1,0 +1,27 @@
+//*********************
+// MIXIN DISPLAY INLINE WITHOUT SPACES
+//*********************
+
+@mixin inline($font-size) {
+  list-style-type: none;
+  font-size: 0;
+
+  li {
+    display: inline;
+    font-size: $font-size;
+  }
+}
+
+// ul{
+//   @include inline(1em);
+// }
+//
+// css:
+// ul{
+//    list-style-type: none;
+//    font-size: 0;
+// }
+// ul li{
+//    display: inline;
+//    font-size: 14px;
+// }

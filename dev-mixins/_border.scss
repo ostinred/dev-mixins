@@ -1,0 +1,30 @@
+//*********************
+// MIXIN BORDER-RADIUS
+//*********************
+
+@mixin rounded($radius: 50%) {
+  border-radius: $radius;
+}
+
+// div{
+//   @include rounded();
+// }
+//
+// css:
+//
+// div{
+//   border-radius: 50%;
+// }
+
+
+//*********************
+// MIXIN FOR BORDER-COLOR
+//*********************
+
+@mixin border($color, $width: 1px, $style: solid) {
+  border: $width $style $color;
+}
+
+// div{
+//  @include border(#0f0);
+//}

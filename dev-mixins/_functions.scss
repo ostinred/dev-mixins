@@ -1,0 +1,77 @@
+/// Checks if a list contains a value(s).
+///
+/// @access private
+///
+/// @param {List} $list
+///   The list to check against.
+///
+/// @param {List} $values
+///   A single value or list of values to check for.
+///
+/// @example scss - Usage
+///   contains($list, $value)
+///
+/// @return {Bool}
+
+@function contains($list, $values...) {
+  @each $value in $values {
+    @if type-of(index($list, $value)) != "number" {
+      @return false;
+    }
+  }
+
+  @return true;
+}
+
+
+/// Converts shorthand to the 4-value syntax.
+///
+/// @param {List} $shorthand
+///
+/// @example scss - Usage
+///   .element {
+///     margin: unpack(1em 2em);
+///   }
+///
+/// @example css - CSS Output
+///   .element {
+///     margin: 1em 2em 1em 2em;
+///   }
+
+@function unpack($shorthand) {
+  @if length($shorthand) == 1 {
+    @return nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1) nth($shorthand, 1);
+  } @else if length($shorthand) == 2 {
+    @return nth($shorthand, 1) nth($shorthand, 2) nth($shorthand, 1) nth($shorthand, 2);
+  } @else if length($shorthand) == 3 {
+    @return nth($shorthand, 1) nth($shorthand, 2) nth($shorthand, 3) nth($shorthand, 2);
+  } @else {
+    @return $shorthand;
+  }
+}
+
+
+/// Checks for a valid CSS length.
+///
+/// @param {String} $value
+
+@function is-length($value) {
+  @return type-of($value) != "null" and (str-slice($value + "", 1, 4) == "calc"
+       or index(auto inherit initial 0, $value)
+       or (type-of($value) == "number" and not(unitless($value))));
+}
+
+
+/// Checks for a valid CSS size.
+///
+/// @param {String} $value
+///
+/// @require {function} contains
+/// @require {function} is-length
+
+@function is-size($value) {
+  @return is-length($value)
+          or contains("fill" "fit-content" "min-content" "max-content", $value);
+}
+
+

@@ -1,0 +1,21 @@
+//*********************
+// MIXIN FOR PLACEHOLDERS
+//*********************
+
+// Placeholder
+//
+@mixin placeholder($color) {
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+//input{
+//  @include placeholder(#0f0);
+//}

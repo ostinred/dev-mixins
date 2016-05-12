@@ -1,0 +1,68 @@
+//*********************
+// MIXINS FOR SIZE
+//*********************
+
+@mixin size($value) {
+  $width: nth($value, 1);
+  $height: $width;
+
+  @if length($value) > 1 {
+    $height: nth($value, 2);
+  }
+
+  @if is-size($height) {
+    height: $height;
+  } @else {
+    @warn "`#{$height}` is not a valid length for the `$height` parameter in the `size` mixin.";
+  }
+
+  @if is-size($width) {
+    width: $width;
+  } @else {
+    @warn "`#{$width}` is not a valid length for the `$width` parameter in the `size` mixin.";
+  }
+}
+
+//************ mixin size
+// bourbon mixin
+//
+// div{
+//  @include size(100%);
+//}
+// css:
+//div{
+//  width: 100%;
+//  height: 100%;
+//}
+// div{
+//  @include size(200px 100px );
+//}
+// css:
+//div{
+//  width: 200px;
+//  height: 100px;
+//}
+
+@mixin square($size:100%) {
+  width: $size;
+  height: $size;
+}
+
+//************ mixin square size with variables
+//
+//div {
+//  @include square();
+//}
+// css:
+//div{
+//  width: 100%;
+//  height: 100%;
+//}
+// div{
+//  @include size(200px);
+//}
+// css:
+//div{
+//  width: 200px;
+//  height: 200px;
+//}

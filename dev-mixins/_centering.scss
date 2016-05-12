@@ -1,0 +1,57 @@
+//*********************
+// CENTERING OF ELEMENTS
+//*********************
+
+//************ mixin center
+//
+@mixin center {
+  @include m(null auto);
+}
+
+// div{
+//  @include center;
+//}
+
+//************ mixin absolute-center
+//
+@mixin absolute-center {
+  @include absolute(0 0 0 0);
+  @include m(auto);
+}
+
+// div{
+//  @include absolute-center;
+//}
+
+//************ middle vertical
+//
+@mixin middle-vertical {
+  @include absolute(50% null null null);
+  transform: translateY(-50%);
+}
+
+// div{
+//  @include middle-vertical;
+//}
+
+//************ mixin middle horizontal
+//
+@mixin middle-horizontal {
+  @include absolute(null null null 50%);
+  transform: translateX(-50%);
+}
+
+// div{
+//  @include middle-horizontal;
+//}
+
+//************ mixin middle center
+//
+@mixin middle-center {
+  @include absolute(50% null null 50%);
+  transform: translate(-50%, -50%);
+}
+
+// div{
+//  @include middle-center;
+//}

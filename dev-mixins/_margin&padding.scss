@@ -1,0 +1,70 @@
+//*********************
+// MIXIN FOR MARGINS
+//*********************
+
+@mixin m($margins: null null null null) {
+  $exact-margin: (
+          margin-top: nth($margins, 1),
+          margin-right: nth($margins, 2),
+          margin-bottom: nth($margins, 3),
+          margin-left: nth($margins, 4)
+  );
+  @each $margin, $value in $exact-margin {
+    @if is-length($value) {
+      #{$margin}: $value;
+    }
+  }
+}
+
+//div {
+//  @include m(0 null null null);
+//}
+// css:
+//div{
+//  margin-top: 0;
+//}
+
+//*********************
+// MIXIN FOR PADDINGS
+//*********************
+
+@mixin p($paddings: null null null null) {
+  $exact-padding: (
+          padding-top: nth($paddings, 1),
+          padding-right: nth($paddings, 2),
+          padding-bottom: nth($paddings, 3),
+          padding-left: nth($paddings, 4)
+  );
+  @each $padding, $value in $exact-padding {
+    @if is-length($value) {
+      #{$padding}: $value;
+    }
+  }
+}
+
+//div {
+//  @include p(0 null null null);
+//}
+// css:
+//div{
+//  padding-top: 0;
+//}
+
+//*********************
+// PADDINGS AND MARGIN RESET
+//*********************
+
+@mixin size-reset($margin: 0, $padding: 0) {
+  margin: $margin;
+  padding: $padding;
+}
+
+//div {
+//  @include size-reset();
+//}
+//
+// css:
+//div{
+//  margin: 0;
+//  padding: 0;
+//}

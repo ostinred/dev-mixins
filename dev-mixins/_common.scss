@@ -1,0 +1,32 @@
+//*********************
+// MIXIN FOR FONT STYLE
+//*********************
+
+@mixin font-style($bold:normal, $style:normal) {
+  font: {
+    weight: $bold;
+    style: $style;
+  }
+}
+
+// p{
+//  @include font-style(bold, italic);
+//}
+
+//*********************
+// MIXIN FOR UNSTYLED LIST
+//*********************
+
+@mixin list-unstyled($display:block) {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    display: $display;
+  }
+}
+
+// ul{
+//  @include list-unstyled;
+//}
+

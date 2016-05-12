@@ -1,0 +1,36 @@
+//*********************
+// MIXIN FOR BACKGROUND
+//*********************
+
+@mixin background-center($size: cover) {
+  background: {
+    position: 50% 50%;
+    size: $size;
+    repeat: no-repeat;
+  }
+}
+
+// div{
+//  background-image: url(your-image);
+//  @include background-center;
+//}
+
+//*********************
+// 15. MIXIN FOR BACKGROUND COLOR & ELEMENT COLOR
+//*********************
+
+@mixin has-color($bg-color,$color) {
+  background-color: $bg-color;
+  color: $color;
+}
+
+// div{
+//  @include has-color(#fff,#000);
+//}
+//
+//css
+//
+// div{
+//  background-color: #fff;
+//  color: #000;
+//}

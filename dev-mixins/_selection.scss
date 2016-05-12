@@ -1,0 +1,12 @@
+//*********************
+// MIXIN FOR SELECTED ELEMENTS
+//*********************
+
+@mixin selection-style($bg-color, $color) {
+  ::selection {
+    background-color: $bg-color;
+    color: $color;
+  }
+}
+
+//@include selection-style(#0f0, #00f);

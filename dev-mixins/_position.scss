@@ -1,0 +1,97 @@
+//*********************
+// MIXINS FOR POSITION
+//*********************
+// thank you guys for Bourbon
+@mixin absolute($sides: null null null null) {
+  position: absolute;
+  $exact-size: (
+          top: nth($sides, 1),
+          right: nth($sides, 2),
+          bottom: nth($sides, 3),
+          left: nth($sides, 4)
+  );
+  @each $side, $value in $exact-size {
+    @if is-length($value) {
+      #{$side}: $value;
+    }
+  }
+}
+
+//************ bourbon mixin position
+// div{
+//  @include absolute(0 0 0 0);
+//}
+// css:
+//div{
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//  bottom: 0;
+//  left: 0;
+//}
+
+// div{
+//  @include absolute(0 null auto null);
+//}
+// css:
+//div{
+//  position: absolute;
+//  top: 0;
+//  bottom: auto;
+//}
+
+@mixin absolute-tl($top:0, $left:0) {
+  position: absolute;
+  top: $top;
+  left: $left;
+}
+
+//************ mixin absolute top left
+//
+//div{
+//  @include absolute-tl();
+//}
+// css:
+//div{
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//}
+//
+//div{
+//  @include absolute-tl(10px, 20px);
+//}
+// css:
+//div{
+//  position: absolute;
+//  top: 10px;
+//  left: 20px;
+//}
+
+@mixin absolute-br($bottom:0, $right:0) {
+  position: absolute;
+  bottom: $bottom;
+  right: $right;
+}
+
+//************ mixin absolute bottom right
+//
+//div{
+//  @include absolute-br();
+//}
+// css:
+//div{
+//  position: absolute;
+//  bottom: 0;
+//  right: 0;
+//}
+//
+//div{
+//  @include absolute-br(10px, 20px);
+//}
+// css:
+//div{
+//  position: absolute;
+//  bottom: 10px;
+//  right: 20px;
+//}

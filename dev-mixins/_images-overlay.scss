@@ -1,0 +1,34 @@
+//*********************
+// MIXIN FOR OVERLAY
+//*********************
+
+@mixin dark-overlay($opacity) {
+  position: relative;
+  z-index: 1;
+
+  &:after {
+    content: '';
+    @include size(100%);
+    @include absolute(0 0 0 0);
+    background: rgba(0, 0, 0, $opacity);
+    z-index: -1;
+  }
+}
+
+// div{
+//  @include dark-overlay(.5);
+//}
+
+//*********************
+// MIXIN FOR RESPONSIVE IMAGE
+//*********************
+// thank you guys for Bootstrap
+@mixin img-responsive($display: block) {
+  display: $display;
+  max-width: 100%;
+  height: auto;
+}
+
+// img{
+//  @include img-responsive;
+//}

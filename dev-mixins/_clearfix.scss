@@ -1,0 +1,21 @@
+//*********************
+// CLEARFIX
+//*********************
+
+@mixin cl {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+// div{
+//   @include cl;
+// }
+// css:
+//  div:after{
+//    content: '';
+//    display: block;
+//    clear: both;
+//  }
