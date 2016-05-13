@@ -1,7 +1,9 @@
 # Dev mixins for fast coding (SCSS) 
 
 ## Instructions
-		bower install dev-mixins-scss
+	bower install dev-mixins-scss
+
+	@import "./your/path/bower_components/dev-mixins/dev_mixins";
 
 #### It contains mixins for:
 1. position
