@@ -1,0 +1,20 @@
+//*********************
+// MIXIN FOR TRANSFORM TRANSITION
+//*********************
+
+@mixin transition-transform($transition: .15s ease-in-out) {
+ will-change: transform;
+ transition: transform $transition;
+}
+
+//@include transform-transition();
+//@include transform-transition(.3s ease);
+
+
+@mixin transition-willChange($value, $transition: .15s ease-in-out) {
+  will-change: $value;
+  transition: $value $transition;
+}
+
+//@include transition-willChange(opacity);
+//@include transition-willChange(opacity, .3s ease-out);
