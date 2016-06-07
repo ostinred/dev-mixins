@@ -19,3 +19,133 @@
 //input{
 //  @include placeholder(#0f0);
 //}
+
+$a-transition-long: .5s;
+
+@mixin placeholder-animation-opacity($class, $transition: $a-transition-long, $text-indent: 250px){
+  .#{$class}::-webkit-input-placeholder{
+    will-change: opacity;
+    opacity: 1;
+    transition: opacity $transition;
+  }
+  .#{$class}:focus::-webkit-input-placeholder{
+    opacity: 0;
+  }
+
+  .#{$class}::-moz-placeholder{
+    will-change: opacity;
+    opacity: 1;
+    transition: opacity $transition;
+
+    &:focus{
+      opacity: 0;
+    }
+  }
+  .#{$class}:-moz-placeholder{
+    will-change: opacity;
+    opacity: 1;
+    transition: opacity $transition;
+
+    &:focus{
+      opacity: 0;
+    }
+  }
+  .#{$class}:-ms-input-placeholder{
+    will-change: opacity;
+    opacity: 1;
+    transition: opacity $transition;
+
+    &:focus{
+      opacity: 0;
+    }
+  }
+}
+
+// @include placeholder-animation-opacity(input-opacity);
+
+
+@mixin placeholder-animation-left($class, $transition: $a-transition-long, $text-indent: -200px){
+  .#{$class}::-webkit-input-placeholder{
+    will-change: text-indent;
+    text-indent: 0;
+    transition:  text-indent $transition;
+  }
+  .#{$class}:focus::-webkit-input-placeholder{
+    text-indent: $text-indent;
+  }
+
+  .#{$class}::-moz-placeholder{
+    will-change: text-indent;
+    text-indent: 0;
+    transition:  text-indent $transition;
+  }
+
+  .#{$class}:focus::-moz-placeholder{
+    text-indent: $text-indent;
+  }
+
+  .#{$class}:-moz-placeholder{
+    will-change: text-indent;
+    text-indent: 0;
+    transition:  text-indent $transition;
+  }
+
+  .#{$class}:focus:-moz-placeholder{
+    text-indent: $text-indent;
+  }
+
+  .#{$class}:-ms-input-placeholder{
+    will-change: text-indent;
+    text-indent: 0;
+    transition:  text-indent $transition;
+  }
+
+  .#{$class}:focus:-ms-input-placeholder{
+    text-indent: $text-indent;
+  }
+}
+
+// @include placeholder-animation-left(input-left);
+
+@mixin placeholder-animation-right($class, $transition: $a-transition-long, $text-indent: 250px){
+  .#{$class}::-webkit-input-placeholder{
+    will-change: text-indent;
+    text-indent: 0;
+    transition:  text-indent $transition;
+  }
+  .#{$class}:focus::-webkit-input-placeholder{
+    text-indent: $text-indent;
+  }
+
+  .#{$class}::-moz-placeholder{
+    will-change: text-indent;
+    text-indent: 0;
+    transition:  text-indent $transition;
+  }
+
+  .#{$class}:focus::-moz-placeholder{
+    text-indent: $text-indent;
+  }
+
+  .#{$class}:-moz-placeholder{
+    will-change: text-indent;
+    text-indent: 0;
+    transition:  text-indent $transition;
+  }
+
+  .#{$class}:focus:-moz-placeholder{
+    text-indent: $text-indent;
+  }
+
+  .#{$class}:-ms-input-placeholder{
+    will-change: text-indent;
+    text-indent: 0;
+    transition:  text-indent $transition;
+  }
+
+  .#{$class}:focus:-ms-input-placeholder{
+    text-indent: $text-indent;
+  }
+}
+
+// @include placeholder-animation-right(input-right);
