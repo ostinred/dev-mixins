@@ -23,5 +23,6 @@
 15. font styling
 16. scrollbar
 17. selection
-18. placeholders
-19. transitions with transform
+18. placeholders styling
+19. placeholders animations
+20. transitions with transform
