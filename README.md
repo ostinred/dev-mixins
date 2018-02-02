@@ -3,7 +3,7 @@
 ## Instructions
 	bower install dev-mixins-scss
 
-	@import "./your/path/bower_components/dev-mixins/dev-mixins";
+	@import "/dev-mixins/_index.scss";
 
 #### It contains mixins for:
 1. position

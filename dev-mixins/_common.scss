@@ -30,3 +30,20 @@
 //  @include list-unstyled;
 //}
 
+
+//*********************
+// MIXIN FOR FOUC REMOVING
+//*********************
+
+// remove fouc for slick
+@mixin remove-fouc {
+  visibility: hidden;
+
+  &.slick-initialized {
+    visibility: visible;
+  }
+}
+
+// .slider {
+// 	@include remove-fouc;
+// }
